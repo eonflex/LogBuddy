@@ -1,0 +1,45 @@
+{
+    "LogTypes":[
+        {
+            "Name": "EMA Logs",
+            "Columns": [
+                {
+                    "Name": "Date",
+                    "ColumnType": "Timestamp"
+                },
+                {
+                    "Name": "Time",
+                    "ColumnType": "Timestamp"
+                },
+                {
+                    "Name": "Type",
+                    "ColumnType": "Info"
+                },
+                {
+                    "Name": "Queue",
+                    "ColumnType": "Info"
+                },
+                {
+                    "Name": "Data",
+                    "ColumnType": "Data"
+                }
+
+            ],
+            "Delimiter": " "
+        }
+    ],
+    "Legend":[
+        {
+            "Name": "Timestamp",
+            "ReplaceWith": "<TIMESTAMP>"
+        },
+        {
+            "Name": "Info",
+            "ReplaceWith": "<INFO>"
+        },
+        {
+            "Name": "Data",
+            "ReplaceWith": "<DATA>"
+        }
+    ]
+}

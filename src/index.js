@@ -2,29 +2,25 @@ import fs from 'fs';
 import path from 'path';
 
 function main() {
-    const [,, logPathAArg, logPathBArg] = process.argv;
+    const [,, logPathAArg, LogType] = process.argv;
 
-    if (!logPathAArg || !logPathBArg) {
-        console.error('Usage: node src/index.js <logPathA> <logPathB>');
+    const configPath = './config.json'; //Default to cwd config.json
+    if (!logPathAArg) {
+        console.error('Usage: node src/index.js <logPathA>');
         process.exit(1);
     }
     try{
 
         const logPathA = path.resolve(logPathAArg);
-        const logPathB = path.resolve(logPathBArg);
+        //const logPathB = path.resolve(logPathBArg);
     }
     catch (error) {
         console.error('Error resolving file paths:', error);
         process.exit(1);
     }
 
-    // Get the logs from the specified paths
-    const logA = fs.readFileSync(logPathA, 'utf-8');
-    const logB = fs.readFileSync(logPathB, 'utf-8');
-
-    // Process the logs (this is a placeholder for actual processing logic)
-    console.log('Log A Contents:', logA);
-    console.log('Log B Contents:', logB);
+    //Send Log to Parser
+    const parserA = new LogParser(logPathA, 'SomeLogType', configPath);
 
 }
 
