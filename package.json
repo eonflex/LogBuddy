@@ -1,0 +1,31 @@
+{
+  "name": "logbuddy",
+  "version": "0.1.0",
+  "description": "A tool for analyzing and comparing log files",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "build": "echo \"No build step defined\"",
+    "test": "npm test -- --coverage",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourname/LogBuddy.git"
+  },
+  "keywords": [],
+  "author": "Jonathan Hay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourname/LogBuddy/issues"
+  },
+  "homepage": "https://github.com/yourname/LogBuddy#readme",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
