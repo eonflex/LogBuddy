@@ -1,7 +1,7 @@
 {
     "LogTypes":[
         {
-            "Name": "EMA Logs",
+            "Name": "EMA",
             "Columns": [
                 {
                     "Name": "Date",

@@ -1,8 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import { LogParser } from './parser.js';
 
-function main() {
-    const [,, logPathAArg, LogType] = process.argv;
+async function main() {
+    //const [,, logPathAArg, LogType] = process.argv;
+
+    var logPathAArg = './tests/emaTest.log'; //Hardcode for testing
+    var LogType = 'EMA';
 
     const configPath = './config.json'; //Default to cwd config.json
     if (!logPathAArg) {
@@ -11,7 +15,7 @@ function main() {
     }
     try{
 
-        const logPathA = path.resolve(logPathAArg);
+        var logPathA = path.resolve(logPathAArg);
         //const logPathB = path.resolve(logPathBArg);
     }
     catch (error) {
@@ -20,8 +24,10 @@ function main() {
     }
 
     //Send Log to Parser
-    const parserA = new LogParser(logPathA, 'SomeLogType', configPath);
+    const parserA = new LogParser(logPathA, LogType, configPath);
+    var output = await parserA.parse()
 
+    process.exit(0);
 }
 
 main();
